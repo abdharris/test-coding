@@ -2,7 +2,7 @@
 
 Proyek ini merupakan implementasi solusi untuk test programming Magento 2.4.4 dengan spesifikasi khusus.
 
-## Fitur Utama
+## Fitur
 
 - Instalasi Magento 2.4.4 via Composer dengan sample data
 - Modul custom `Lime/Sample` dengan:
@@ -12,9 +12,9 @@ Proyek ini merupakan implementasi solusi untuk test programming Magento 2.4.4 de
 - Instalasi modul Mageplaza Product Slider
 - Elasticsearch dinonaktifkan
 
-## Prasyarat
+## Requirement
 
-- PHP 7.4/8.1
+- PHP 8.1
 - MySQL 5.7/8.0
 - Composer 2.x
 - XAMPP/WAMP/LAMP
@@ -37,28 +37,13 @@ composer install
 
 sql
 
-CREATE DATABASE magento244;
+CREATE DATABASE magento2;
 
     Install Magento (sesuaikan dengan credential database Anda):
 
 bash
 
-php bin/magento setup:install \
---base-url=http://local.magento \
---db-host=localhost \
---db-name=magento244 \
---db-user=root \
---db-password= \
---admin-firstname=admin \
---admin-lastname=admin \
---admin-email=admin@admin.com \
---admin-user=admin \
---admin-password=admin123 \
---language=en_US \
---currency=USD \
---timezone=America/Chicago \
---use-rewrites=1 \
---search-engine=mysql
+php bin/magento setup:install --base-url="http://local.magento/" --db-host="localhost" --db-name="magento2" --db-user="root" --db-password="" --admin-firstname="admin" --admin-lastname="user" --admin-email="admin@local.magento" --admin-user="admin" --admin-password="Admin123" --language="en_US" --currency="USD" --timezone="Asia/Jakarta" --use-rewrites="1" --backend-frontname="admin" --search-engine=elasticsearch7 --elasticsearch-host="localhost" --elasticsearch-port=9200
 
     Enable modul custom:
 
